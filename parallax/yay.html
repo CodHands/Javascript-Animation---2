@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>Crazy Parallax</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding:0;
+    }
+
+    header{
+      width:100%;
+      height:70px;
+      background-color: #5CC37B;
+      padding-top:20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing:border-box;
+    }
+
+    ul li{
+      display: inline-block;
+      font-family: monospace;
+      font-size: 20px;
+      padding: 0 10px 0 10px;
+    }
+
+    #parallax{
+      width: 100%;
+      height: 600px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    #parallax img{
+      position: relative;
+      max-width: 105%;
+    }
+
+    #parallax h1{
+      position: absolute;
+      font-family: monospace;
+      z-index: 10000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <center><ul>
+      <li>HOME</li>
+      <li>ABOUT</li>
+      <li>PROJIS</li>
+      <li>PHOTODOJO</li>
+      <li>CONTACT</li>
+    </ul></center>
+  </header>
+
+<div id="parallax">
+  <img id="parallax-img" src="nike.jpg" />
+</div>
+
+</body>
+
+
+<script lang="javascript">
+
+  function updateAvatarPosition( e ){
+      var avatar = document.getElementById("parallax-img");
+      avatar.style.left = -(e.x/100) + "px";
+      avatar.style.top = -(e.y/100) + "px";
+  }
+
+  parallax.onmousemove = updateAvatarPosition;
+
+</script>
+</html>
